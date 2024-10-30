@@ -25,7 +25,7 @@
 ### Semester Assignments
 
 - Link to Assignment 1: [Figma essentials](https://github.com/laausic/hci/blob/master/Project%20Assignments/Anubis_figma.zip)
-- Link to Assignment 2: [**Assignment 2**](URL_TO_ASSIGNMENT_2) <!-- Replace with actual URL -->
+- Link to Assignment 2: [User personas and information architecture](URL_TO_ASSIGNMENT_2) <!-- Replace with actual URL -->
 - Link to Assignment 3: [**Assignment 3**](URL_TO_ASSIGNMENT_3) <!-- Replace with actual URL -->
 <!-- Add more assignments as necessary -->
 
