@@ -16,7 +16,7 @@ const pages: Page [] = [
     path: "/", 
   },
   {
-    title: "VIP Services",
+    title: "VIP",
     path: "/vip",
   },
   {
@@ -24,15 +24,11 @@ const pages: Page [] = [
     path: "/gallery",
   },
   {
-    title: "Schedule a Test Drive",
+    title: "Test Drive",
     path: "/testdrive",
   },
   {
-    title: "Purchase Inquiry",
-    path: "/purchase",
-  },
-  {
-    title: "Contact us",
+    title: "Contact",
     path: "/contact",
   },
 ];
@@ -56,8 +52,11 @@ export function Navigation(){
   const pathname = usePathname();
   console.log(pathname);
   return(
-    <ul className="flex space-x-4 my-4 justify-center">
-    {pages.map((page)=>processPage(page, pathname))}
-    </ul>
+  <div className="flex justify-between items-center my-4 mx-[2rem]">
+    <p className="font-michroma text-3xl">A N U B I S</p>
+      <ul className="flex space-x-6">
+      {pages.map((page) => processPage(page, pathname))}
+      </ul>
+  </div>
   )
 }
