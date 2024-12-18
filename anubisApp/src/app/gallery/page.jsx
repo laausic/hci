@@ -2,10 +2,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-export const BASE_API_URL = 'https://my-json-server.typicode.com/jsaric21/fetch-test'; // Replace with your image API URL
-
 const fetchImages = async () => {
-  const response = await fetch(`${BASE_API_URL}/photos`); // Fetch 10 images
+  const response = await fetch('https://my-json-server.typicode.com/jsaric21/fetch-test/photos');
   return response.json();
 };
 
