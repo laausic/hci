@@ -1,9 +1,7 @@
 import Link from "next/link";
 
-export const BASE_API_URL = "https://my-json-server.typicode.com/jsaric21/fetch-test"; // Replace with your image API URL
-
 const fetchImageById = async (id) => {
-  const response = await fetch(`${BASE_API_URL}/photos/${id}`);
+  const response = await fetch(`https://my-json-server.typicode.com/jsaric21/fetch-test/photos/${id}`);
   return response.json();
 };
 
