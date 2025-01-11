@@ -60,7 +60,7 @@ export default function Home() {
     <div 
     className="flex h-3/5 bg-cover bg-center rounded-t-lg justify-center items-end" 
     style={{ backgroundImage: "url('/img/home-cutting-edge.jpg')" }}>
-      <p className="text-3xl font-bold text-white mb-4 max-sm:hidden">CUTTING EDGE</p>
+      <p className="text-3xl font-bold text-white mb-4 max-sm:hidden">CUTTING - EDGE</p>
     </div>
 
     <div className="h-2/5 flex items-center justify-start bg-[#519078] rounded-b-lg max-sm:hidden">
@@ -75,7 +75,7 @@ export default function Home() {
     {/*Adjust for mobile phone*/}
     <div className="w-full sm:hidden flex flex-col items-start justify-center">
       <img src="/img/home-cutting-edge.jpg" alt="Image" className="w-full rounded-lg h-2/3" />
-      <h2 className="text-xl font-extralight tracking-tight font-michroma mt-3">CUTTING EDGE</h2>
+      <h2 className="text-xl font-extralight tracking-tight font-michroma mt-3">CUTTING - EDGE</h2>
       <div className="w-32 h-1 bg-[#519078] mt-3"></div>
       <p className="text-lg font-thin text-left text-black font-poppins mt-4 max-w-lg sm:hidden">
          Integrate advanced technology features that enhance safety and usability.
@@ -160,7 +160,7 @@ export default function Home() {
     className="flex flex-col justify-center items-start p-4 bg-cover opacity-80 bg-center bg-no-repeat h-screen w-full max-sm:h-80"
     style={{backgroundImage: `url(/img/home-explore.jpg)`}}>
   
-  <div className="mt-20 flex flex-row rounded-lg justify-center items-center bg-opacity-30">
+  <div className="mt-20 flex flex-row rounded-lg justify-center items-center bg-gray-300 bg-opacity-40">
     <div className="border border-lightGray p-4 md:p-6 max-md:hidden rounded-lg flex flex-row items-center space-x-4">
       <p className="text-lg text-center font-poppins max-w-lg text-black">
         Experience unmatched performance and innovative technology, offering exceptional speed, precision, and safety on the water.
