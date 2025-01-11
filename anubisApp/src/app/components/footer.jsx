@@ -16,8 +16,9 @@ export default function Footer(){
       <div className="container mx-10 px-4 text-xl">
         <div className="flex flex-wrap justify-between items-start">
 
-          <div className="sm:w-1/4 mb-6 sm:mb-0 flex flex-col items-center justify-center text-center">
-            <img src={'/img/logo.jpg'} alt="Logo" className="w-32" />
+          <div className="sm:w-1/4 mb-6 sm:mb-0 flex flex-col max-sm:flex max-sm:flex-row items-center justify-center text-center">
+            <img src={'/img/logo.jpg'} alt="Logo" className="w-20" />
+            <p className="font-michroma mt-5 text-black sm:hidden">A N U B I S</p>
             <p className="text-center mt-2 text-xl text-gray-500 max-sm:hidden">"Chase The Waves"</p>
           </div>
 
@@ -51,24 +52,25 @@ export default function Footer(){
             </ul>
         </div>
 
-        {/* Contact Us */}
-        <div className="w-full sm:w-1/4 mb-6 sm:mb-0">
-        <h3 className="text-xl font-semibold mb-4 cursor-pointer sm:cursor-default"
-            onClick={() => toggleCareerMenu()}>Career
-        <span className="sm:hidden ml-2">{isCareerOpen ? "▲" : "▼"}</span>
-        </h3>
+          {/* Contact Us */}
+          <div className="w-full sm:w-1/4 mb-6 sm:mb-0">
+            <h3 className="text-xl font-semibold mb-4 cursor-pointer sm:cursor-default"
+                onClick={() => toggleCareerMenu()}>Career
+            <span className="sm:hidden ml-2">{isCareerOpen ? "▲" : "▼"}</span>
+            </h3>
+
             <ul className={`space-y-2 text-xl ${isCareerOpen ? "block" : "hidden"} sm:block`}>
                 <li><a href="mailto:info@company.com" className="hover:text-[#519078]">View Job Openings</a></li>
                 <li>Our Culture & Values</li>
                 <li>Diversity & Inclusion</li>
             </ul>
         </div>
-        </div>
+    </div>
 
         {/* Footer Bottom */}
         </div>
         <div className="text-center mt-12 text-gray-500 text-xl">
-          <p>&copy; 2025 Anubis Jet Car. All Rights Reserved.</p>
+          <p>&copy; 2025 Anubis Jet Car. <span className="block sm:inline">All Rights Reserved.</span></p>
         </div>
       
     </footer>
