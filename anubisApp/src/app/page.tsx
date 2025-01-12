@@ -184,7 +184,7 @@ export default function Home() {
         EXPLORE &gt;&gt;
       </button>
   </div>
-
+  <div className="border-t border-gray-400 w-full mt-5"></div>
   <Footer/>
   </>
   );
