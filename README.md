@@ -29,6 +29,7 @@
 - Link to Assignment 3: [Next.js - Deploying Application](https://hci-drab-nine.vercel.app/) <!-- Replace with actual URL -->
 - Link to Assignment 4: [Low/High-fidelity prototype](https://github.com/laausic/hci/blob/master/Project%20Assignments/Anubis_hifi.png)
 - Link to Assignment 5: [Next.js - Dynamic routes, data fetching](https://hci-5rq4.vercel.app/)
+- Link to Assignment 5: [Full Responsive Page Coding](https://hci-anubis.vercel.app/)
 <!-- Add more assignments as necessary -->
 
 ## Project Requirements
