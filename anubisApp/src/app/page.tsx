@@ -5,7 +5,7 @@ import Footer from './components/footer.jsx';
 
 export default function Home() {
   return (
-    <>
+  <div className="overflow-x-hidden">
    <main
     className="flex flex-col justify-center items-start p-4 bg-cover bg-center bg-no-repeat h-screen w-full max-sm:h-80"
     style={{
@@ -186,6 +186,6 @@ export default function Home() {
   </div>
   <div className="border-t border-gray-400 w-full mt-5"></div>
   <Footer/>
-  </>
+  </div>
   );
 }
