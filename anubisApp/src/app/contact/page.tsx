@@ -2,7 +2,7 @@ import Footer from "../components/footer";
 
 export default function ContactPage() {
     return (
-      <>
+        <div className="overflow-x-hidden">
       <main className="flex flex-col justify-center items-start p-4 bg-cover bg-center bg-no-repeat
   h-[60vh] w-full sm:h-[50vh] md:h-[40vh] lg:h-[60vh]" style={{ backgroundImage: `url(/img/contact-background.png)`
      }}></main>
@@ -14,7 +14,7 @@ export default function ContactPage() {
                 <p className="text-2xl max-w-sm mb-10">
                 Have questions or need assistance?
                 Fill out the form, and our team will get back to you shortly.</p>
-                <img src="/img/contact-2.jpg" alt="contact2" className="rounded-lg w-lg h-60" ></img>
+                <img src="/img/contact-2.jpg" alt="contact2" className="rounded-lg w-full md:w-auto max-w-full h-auto object-cover" ></img>
             </div>
             
             <div className="flex-1">
@@ -42,7 +42,7 @@ export default function ContactPage() {
         <div className="w-full h-[1px] bg-gray-300 my-6"></div>
 
     <Footer/>
-    </>
+    </div>
     );
   }
   
