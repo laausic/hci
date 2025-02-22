@@ -8,8 +8,8 @@ type Page = {
 // We hardcode pages here, but you could get this information from some external source (e.g. CMS, DB, config file, etc).
 const pages: Page[] = [
   {
-    title: "Concierge Support",
-    path: "/vip/support",
+    title: "Sign In",
+    path: "/vip/signin",
   },
   {
     title: "Warranty & Maintenance",
@@ -17,12 +17,12 @@ const pages: Page[] = [
   },
   {
     title: "Future upgrades",
-    path: "/vip/upgrades",
+    path: "/vip/private",
   },
 ];
 function processPage(page: Page, index: number, pathname: string) {
   return (
-    <li key={index}>
+    /*<li key={index}>
       <Link
         href={page.path}
         className={
@@ -31,15 +31,17 @@ function processPage(page: Page, index: number, pathname: string) {
       >
         {page.title}
       </Link>
-    </li>
+    </li>*/
+    <div></div>
   );
 }
 export function Navigation() {
   const pathname = usePathname();
   console.log(pathname);
   return (
-    <ul className="flex justify-center space-x-4 mt-8">
+   /* <ul className="flex justify-center space-x-4 mt-8">
       {pages.map((page, index) => processPage(page, index, pathname))}
-    </ul>
+    </ul>*/
+    <div></div>
   );
 }

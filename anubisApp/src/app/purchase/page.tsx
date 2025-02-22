@@ -1,8 +1,9 @@
 import Footer from "../components/footer";
+import Link from "next/link";
 
 export default function PurchasePage() {
     return (
-      <div>
+      <div className="overflow-x-hidden">
       {/* Background Image */}
       <main
         className="flex flex-col justify-center items-start p-4 bg-cover bg-center bg-no-repeat h-screen w-full max-sm:h-80"
@@ -74,7 +75,9 @@ export default function PurchasePage() {
               of elegance and innovation.</p>
             <div className="space-x-8 mt-6 flex max-sm:flex-col max-sm:space-x-0 max-sm:space-y-4 max-sm:items-center">
               <button className="bg-black text-white px-8 py-4 rounded-lg shadow hover:bg-gray-700 max-sm:px-8">Learn More</button>
-              <button className="bg-[#519078] text-white px-8 py-4 rounded-lg shadow hover:bg-[#284d4d] max-sm:px-10">Join Now</button>
+              <Link href="./vip/signin">
+                <button className="bg-[#519078] text-white px-8 py-4 rounded-lg shadow hover:bg-[#284d4d] max-sm:px-10">Join Now</button>
+              </Link>
             </div>
           </div>
           
