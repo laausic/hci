@@ -7,19 +7,22 @@ import { createClientComponentClient, Session } from "@supabase/auth-helpers-nex
 import "@fontsource/michroma";
 import "@fontsource/poppins";
 import {supabase} from "@/lib/auth-client"
+import NotFound from "../not-found";
 
 type Page = {
   title: string;
   path: `/${string}`;
   protected?: boolean; // Add a `protected` flag for private routes
+  hidden?: boolean;
 };
 
-const pages: Page[] = [
+export const pages: Page[] = [
   { title: "Discover", path: "/" },
   { title: "VIP", path: "/purchase" },
   { title: "Gallery", path: "/gallery" },
   { title: "Test Drive", path: "/testdrive"},
   { title: "Contact", path: "/contact" },
+  { title: "VIP", path: "/vip", hidden: true},
 ];
 
 function processPage(
@@ -76,6 +79,7 @@ export function Navigation() {
     await supabase.auth.signOut();
   };
 
+
   return (
     <div className="flex justify-between items-center my-4 mx-[2rem]">
       {/* Logo Section */}
@@ -100,7 +104,7 @@ export function Navigation() {
         } sm:flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 absolute sm:static top-16 left-0 bg-white sm:bg-transparent shadow-md sm:shadow-none rounded-lg p-6 sm:p-0 z-10 w-full sm:w-auto`}
       >
         {/* Render public pages */}
-        {pages.map((page) => processPage(page, pathname, setMenuOpen, isLoggedIn))}
+        {pages.filter((page) => !page.hidden).map((page) => processPage(page, pathname, setMenuOpen, isLoggedIn))}
 
         {/* Render "Private" link only if logged in */}
         {isLoggedIn && (
