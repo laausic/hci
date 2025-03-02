@@ -1,6 +1,15 @@
 import Footer from "../components/footer";
 import Link from "next/link";
 
+
+/****
+-purchase page shows ELITE and AMBASSADOR options
+-Learn More redirects user to vip/warranty (Ambassador page)
+-Join Now redirects to Sign in
+*****/
+
+
+
 export default function PurchasePage() {
     return (
       <div className="overflow-x-hidden">
@@ -74,7 +83,9 @@ export default function PurchasePage() {
               this package ensures you stay at the forefront 
               of elegance and innovation.</p>
             <div className="space-x-8 mt-6 flex max-sm:flex-col max-sm:space-x-0 max-sm:space-y-4 max-sm:items-center">
+              <Link href="./vip/warranty">
               <button className="bg-black text-white px-8 py-4 rounded-lg shadow hover:bg-gray-700 max-sm:px-8">Learn More</button>
+              </Link>
               <Link href="./vip/signin">
                 <button className="bg-[#519078] text-white px-8 py-4 rounded-lg shadow hover:bg-[#284d4d] max-sm:px-10">Join Now</button>
               </Link>
