@@ -22,7 +22,7 @@ export const pages: Page[] = [
   { title: "Gallery", path: "/gallery" },
   { title: "Test Drive", path: "/testdrive"},
   { title: "Contact", path: "/contact" },
-  { title: "VIP", path: "/vip", hidden: true},
+  { title: "VIP", path: "/vip", hidden: true}, //zbog hidden se ne boldira VIP kad upren Join Now
 ];
 
 function processPage(

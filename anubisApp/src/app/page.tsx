@@ -12,7 +12,7 @@ export default function Home() {
       backgroundImage: `url(/img/image.png)`,
     }}
   >
-    <div className="border border-lightGray p-4 md:p-6 rounded-lg bg-opacity-60 opacity-90 bg-gray-200">
+    <div className="border border-lightGray p-4 md:p-6 rounded-lg bg-opacity-60 opacity-90 bg-gray-200 ml-3">
       <h2 className="text-3xl md:text-5xl font-extralight tracking-tight font-michroma mb-4">
         Power, Elegance, <br /> Perfection<span className="text-[#519078]">.</span>
       </h2>
@@ -20,7 +20,7 @@ export default function Home() {
         Crafted to Surpass Every Expectation.
       </h3>
     </div>
-    <button className="text-white bg-[#519078] hover:bg-[#407a64] rounded-lg px-6 py-3 md:px-8 md:py-4 text-sm md:text-lg m-3">
+    <button className="text-white bg-[#519078] hover:bg-[#407a64] rounded-lg px-6 py-3 md:px-8 md:py-4 text-sm md:text-lg mt-3 ml-3">
       <span className="block sm:hidden">Order</span>
       <span className="hidden sm:block">Order Now</span>
     </button>
