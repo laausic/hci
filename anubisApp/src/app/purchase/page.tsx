@@ -21,9 +21,9 @@ export default function PurchasePage() {
           backgroundSize: '100% auto'
         }}>
 
-        <div className="p-4 mb-72 md:p-6">
-          <h1 className="text-5xl font-light font-michroma max-sm:hidden">
-              Only way to become ELITE <br /> is to drive ELITE.
+        <div className="p-4 mb-32 md:p-6">
+          <h1 className="text-5xl text-white backdrop-blur-sm bg-white/10 rounded-lg shadow-md font-light font-michroma max-sm:hidden px-6 py-4">
+            Only way to become ELITE <br /> is to drive ELITE.
           </h1>
         </div>
       </main>
@@ -60,13 +60,14 @@ export default function PurchasePage() {
 
       {/* Background Image */}
       <main
-        className="flex flex-col justify-center items-start p-4 bg-cover bg-center bg-no-repeat w-full sm:h-auto"
+        className="flex flex-col justify-center items-start p-4 bg-cover bg-center bg-no-repeat h-screen w-full max-sm:h-80"
         style={{
-          backgroundImage: `url(/img/vip-1.png)`,
+          backgroundImage: 'url(/img/vip-1.png)',
+          backgroundSize: '100% auto'
         }}>
 
-        <div className="p-4 mb-96 md:p-6">
-          <h1 className="text-5xl font-light font-michroma max-sm:text-2xl max-sm:hidden">
+        <div className="p-4 mb-32 md:p-6">
+          <h1 className="text-5xl font-light text-white backdrop-blur-md shadow-lg font-michroma max-sm:text-2xl max-sm:hidden px-6 py-4">
             Influence with STYLE <br /> represent with AMBASSADOR.
           </h1>
         </div>
