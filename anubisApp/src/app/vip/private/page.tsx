@@ -27,7 +27,7 @@ export default function PrivatePage() {
   }
 
   return (
-    <>
+    <div className="overflow-x-hidden">
     <main className="bg-cover bg-center bg-no-repeat h-screen w-full max-sm:h-90" style={{
       backgroundImage: `url(/img/private.jpeg)`,
     }}>
@@ -46,6 +46,6 @@ export default function PrivatePage() {
     </div>
     </main>
     <Footer/>
-    </>
+    </div>
   );
 }
