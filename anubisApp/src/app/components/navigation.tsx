@@ -110,7 +110,7 @@ export function Navigation() {
         {isLoggedIn && (
           <li key="private" className="py-2">
             <Link
-              href="./vip/private"
+              href="/vip/private"
               className="block hover:text-[#519078]"
               onClick={() => setMenuOpen(false)}
             >
