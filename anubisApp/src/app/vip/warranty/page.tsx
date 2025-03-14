@@ -1,22 +1,26 @@
 import React from "react";
+import Footer from "@/app/components/footer";
+import Link from "next/link";
 
 const AmbassadorPage = () => {
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-6 overflow-x-hidden">
       {/* Back Button */}
-      <div className="text-center text-lg sm:text-2xl mb-6 font-poppins">
+      <Link href="/purchase">
+      <div className="text-center text-lg sm:text-2xl mb-6 font-poppins hover:text-gray-500">
         &lt;&lt; BACK TO VIP
       </div>
+      </Link>
 
       {/* Title */}
       <h1 className="text-center text-5xl max-sm:text-2xl font-thin tracking-widest text-[#519078]">
-        A M B A S S A D O R
+        AMBASSADOR
       </h1>
 
       {/* Hero Image */}
       <div className="my-8 sm:my-12">
         <img
-          src="/img/dubai.png"
+          src="/img/ambassador.webp"
           alt="Ambassador Car"
           className="w-full rounded-lg shadow-lg object-cover"
         />
@@ -65,7 +69,7 @@ const AmbassadorPage = () => {
       </div>
 
       {/* Monthly Events Section */}
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between mb-8">
         <div className="text-center md:text-left w-full md:w-1/2">
           <h2 className="text-black text-xl sm:text-2xl tracking-wide mb-4">M O N T H L Y</h2>
           <div className="w-20 h-1 bg-[#519078] mb-8 mx-auto md:mx-0"></div>
@@ -79,6 +83,8 @@ const AmbassadorPage = () => {
           className="w-full md:w-1/2 rounded-lg shadow-lg mb-6 md:mb-0"
         />
       </div>
+      <div className="border-t border-gray-400 w-full mt-5"></div>
+      <Footer/>
     </div>
   );
 };
