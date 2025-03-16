@@ -9,7 +9,7 @@ export default function TestDrivePage() {
     { name: "DUBAI", region: ["June", "July", "August", "November"], image: "dubai.png" },
     { name: "MIAMI", region: ["March", "April", "May", "June", "July", "August"], image: "miami.png" },
     { name: "CAPE TOWN", region: ["December", "January", "February"], image: "cape_town.png" },
-    { name: "RIO DE JANEIRO", region: ["September", "October", "December", "January", "February"], image: "rio de janeiro.png" },
+    { name: "RIO", region: ["September", "October", "December", "January", "February"], image: "rio.png" },
     { name: "PHUKET", region: ["November", "December", "January", "February"], image: "phuket.png" },
     { name: "BORA BORA", region: ["December", "January", "February"], image: "bora_bora.png" },
     { name: "SPLIT", region: ["June", "July", "August", "September", "October"], image: "split.png" }
@@ -31,18 +31,17 @@ export default function TestDrivePage() {
       ? cities.filter(city => city.region.includes(selectedRegion)) // Checks arrays
       : cities;
 
+    /*<main className="flex flex-col justify-center items-start p-4 bg-cover bg-center bg-no-repeat w-full min-h-[20rem] sm:h-screen"
+      style={{
+      backgroundImage: `url(/img/testdrive.png)`,
+      }}></main>*/
 
-     /* <main className="flex flex-col justify-center items-start p-4 bg-cover bg-center bg-no-repeat w-full min-h-[20rem] sm:h-screen"
-        style={{
-        backgroundImage: `url(/img/testdrive.png)`,
-        }}></main>*/
     return (
     <div className="overflow-x-hidden">
-      <h1 className="text-center text-4xl font-semibold mt-6">Before You Buy, Take It for a Spin!"</h1>
       <div className="max-w-6xl mx-auto py-8">
       {/* Dropdown Filter */}
-      <div className="mb-6 text-center flex flex-row">
-      <p className="text-xl px-4 py-2">Available at:</p>
+      <div className="mb-6">
+      <p className="mb-6 text-xl">Available at:</p>
         <select
           className="border px-4 py-2 rounded-md"
           value={selectedRegion}

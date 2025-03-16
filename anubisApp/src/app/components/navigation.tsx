@@ -18,7 +18,7 @@ type Page = {
 
 export const pages: Page[] = [
   { title: "Discover", path: "/" },
-  { title: "VIP", path: "/purchase" },
+  { title: "VIP", path: "/purchase", hidden: false },
   { title: "Gallery", path: "/gallery" },
   { title: "Test Drive", path: "/testdrive"},
   { title: "Contact", path: "/contact" },
@@ -84,7 +84,7 @@ export function Navigation() {
     <div className="flex justify-between items-center my-4 mx-[2rem]">
       {/* Logo Section */}
       <div className="flex items-center justify-center sm:justify-start sm:flex-row flex-col">
-        <img src="/img/logo.jpg" alt="Logo" className="h-14 sm:h-10 mr-4" />
+        <img src="/img/logo.png" alt="Logo" className="h-14 sm:h-10 mr-4" />
         <p className="font-michroma text-4xl sm:text-3xl max-sm:hidden">A N U B I S</p>
       </div>
 
