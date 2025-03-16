@@ -18,7 +18,7 @@ type Page = {
 
 export const pages: Page[] = [
   { title: "Discover", path: "/" },
-  { title: "VIP", path: "/purchase", hidden: false },
+  { title: "VIP", path: "/purchase" },
   { title: "Gallery", path: "/gallery" },
   { title: "Test Drive", path: "/testdrive"},
   { title: "Contact", path: "/contact" },
