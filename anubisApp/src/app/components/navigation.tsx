@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { createClientComponentClient, Session } from "@supabase/auth-helpers-nextjs";
+import {
+  createClientComponentClient,
+  Session,
+} from "@supabase/auth-helpers-nextjs";
 import "@fontsource/michroma";
 import "@fontsource/poppins";
-import {supabase} from "@/lib/auth-client"
+import { supabase } from "@/lib/auth-client";
 import NotFound from "../not-found";
 
 type Page = {
@@ -18,11 +21,11 @@ type Page = {
 
 export const pages: Page[] = [
   { title: "Discover", path: "/" },
-  { title: "VIP", path: "/purchase" },
+  { title: "VIP", path: "/purchase", hidden: true },
   { title: "Gallery", path: "/gallery" },
-  { title: "Test Drive", path: "/testdrive"},
+  { title: "Test Drive", path: "/testdrive" },
   { title: "Contact", path: "/contact" },
-  { title: "VIP", path: "/vip", hidden: true}, //zbog hidden se ne boldira VIP kad upren Join Now
+  { title: "VIP", path: "/vip", hidden: true }, //zbog hidden se ne boldira VIP kad upren Join Now
 ];
 
 function processPage(
@@ -61,16 +64,22 @@ export function Navigation() {
   // Check authentication status
   useEffect(() => {
     const checkAuth = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
       setIsLoggedIn(!!session);
     };
 
     checkAuth();
 
     // Listen for auth changes (e.g., sign in or sign out)
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event: string, session: Session | null) => {
-      setIsLoggedIn(!!session);
-    });
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(
+      (event: string, session: Session | null) => {
+        setIsLoggedIn(!!session);
+      }
+    );
 
     return () => subscription.unsubscribe();
   }, [supabase]);
@@ -79,14 +88,17 @@ export function Navigation() {
     await supabase.auth.signOut();
   };
 
-
   return (
     <div className="flex justify-between items-center my-4 mx-[2rem]">
       {/* Logo Section */}
-      <div className="flex items-center justify-center sm:justify-start sm:flex-row flex-col">
-        <img src="/img/logo.png" alt="Logo" className="h-14 sm:h-10 mr-4" />
-        <p className="font-michroma text-4xl sm:text-3xl max-sm:hidden">A N U B I S</p>
-      </div>
+      <Link href="../">
+        <div className="flex items-center justify-center sm:justify-start sm:flex-row flex-col">
+          <img src="/img/logo.png" alt="Logo" className="h-14 sm:h-10 mr-4" />
+          <p className="font-michroma text-4xl sm:text-3xl max-sm:hidden">
+            A N U B I S
+          </p>
+        </div>
+      </Link>
 
       {/* Hamburger Menu */}
       <button
@@ -103,8 +115,17 @@ export function Navigation() {
           menuOpen ? "flex" : "hidden"
         } sm:flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 absolute sm:static top-16 left-0 bg-white sm:bg-transparent shadow-md sm:shadow-none rounded-lg p-6 sm:p-0 z-10 w-full sm:w-auto`}
       >
+        {processPage(pages[0], pathname, setMenuOpen, isLoggedIn)}
         {/* Render public pages */}
-        {pages.filter((page) => !page.hidden).map((page) => processPage(page, pathname, setMenuOpen, isLoggedIn))}
+        {!isLoggedIn &&
+          processPage(
+            pages.find(
+              (page) => page.title === "VIP" && page.path === "/purchase"
+            )!,
+            pathname,
+            setMenuOpen,
+            isLoggedIn
+          )}
 
         {/* Render "Private" link only if logged in */}
         {isLoggedIn && (
@@ -114,24 +135,30 @@ export function Navigation() {
               className="block hover:text-[#519078]"
               onClick={() => setMenuOpen(false)}
             >
-              Private
+              Ambassador
             </Link>
           </li>
         )}
 
+        {pages
+          .filter((page) => !page.hidden && page.title !== "VIP") // Remove hidden pages & VIP
+          .slice(1) // Start from the second page since Discover is already included
+          .map((page) => processPage(page, pathname, setMenuOpen, isLoggedIn))}
+
         {/* If user is logged in, then Sign Out button is shown */}
-        {isLoggedIn && (
-          <li key="sign-out" className="py-2">
-            <Link
-              href="../"
-              onClick={handleSignOut}
-              className="block text-red-600 hover:text-red-800"
-            >
-              Sign Out
-            </Link>
-          </li>
-        )
-        /* : (
+        {
+          isLoggedIn && (
+            <li key="sign-out" className="py-2">
+              <Link
+                href="../"
+                onClick={handleSignOut}
+                className="block text-red-600 hover:text-red-800"
+              >
+                SO
+              </Link>
+            </li>
+          )
+          /* : (
           <li key="sign-in" className="py-2">
             <Link
               href="./vip/signin"
@@ -141,7 +168,7 @@ export function Navigation() {
               Sign In
             </Link>
           </li>)*/
-      }
+        }
       </ul>
     </div>
   );

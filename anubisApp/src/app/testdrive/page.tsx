@@ -9,7 +9,7 @@ export default function TestDrivePage() {
     { name: "DUBAI", region: ["June", "July", "August", "November"], image: "dubai.png" },
     { name: "MIAMI", region: ["March", "April", "May", "June", "July", "August"], image: "miami.png" },
     { name: "CAPE TOWN", region: ["December", "January", "February"], image: "cape_town.png" },
-    { name: "RIO", region: ["September", "October", "December", "January", "February"], image: "rio.png" },
+    { name: "RIO DE JANEIRO", region: ["September", "October", "December", "January", "February"], image: "rio de janeiro.png" },
     { name: "PHUKET", region: ["November", "December", "January", "February"], image: "phuket.png" },
     { name: "BORA BORA", region: ["December", "January", "February"], image: "bora_bora.png" },
     { name: "SPLIT", region: ["June", "July", "August", "September", "October"], image: "split.png" }
@@ -61,7 +61,7 @@ export default function TestDrivePage() {
           <div key={index} className="relative bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="p-6">
               <h2 className="text-2xl font-bold">{city.name}</h2>
-              <div className="w-32 h-1 bg-[#519078] mt-2"></div>
+              <div className="w-[5ch] h-1 bg-[#519078] mt-2"></div>
             </div>
             <div className="h-64 bg-cover bg-center" style={{ backgroundImage: `url('/img/${city.name.toLowerCase()}.png')` }}></div>
             <div className="p-8 relative">

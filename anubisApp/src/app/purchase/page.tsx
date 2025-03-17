@@ -22,8 +22,8 @@ export default function PurchasePage() {
         }}>
 
         <div className="p-4 mb-32 md:p-6">
-          <h1 className="text-5xl text-white backdrop-blur-sm bg-white/10 rounded-lg shadow-md font-light font-michroma max-sm:hidden px-6 py-4">
-            Only way to become ELITE <br /> is to drive ELITE.
+          <h1 className="text-5xl text-black backdrop-blur-sm bg-white/10 rounded-lg shadow-md font-light font-michroma max-sm:hidden px-6 py-4">
+            Only way to become ELITE <br /><span className="ml-1"> is to drive ELITE.</span>
           </h1>
         </div>
       </main>
@@ -67,7 +67,7 @@ export default function PurchasePage() {
         }}>
 
         <div className="p-4 mb-32 md:p-6">
-          <h1 className="text-5xl font-light text-white backdrop-blur-md shadow-lg font-michroma max-sm:text-2xl max-sm:hidden px-6 py-4">
+          <h1 className="text-5xl font-light text-black backdrop-blur-md shadow-lg font-michroma max-sm:text-2xl max-sm:hidden px-6 py-4">
             Influence with STYLE <br /> represent with AMBASSADOR.
           </h1>
         </div>
@@ -87,7 +87,7 @@ export default function PurchasePage() {
               <Link href="./vip/warranty">
               <button className="bg-black text-white px-8 py-4 rounded-lg shadow hover:bg-gray-700 max-sm:px-8">Learn More</button>
               </Link>
-              <Link href="./vip/signin">
+              <Link href="./vip">
                 <button className="bg-[#519078] text-white px-8 py-4 rounded-lg shadow hover:bg-[#284d4d] max-sm:px-10">Join Now</button>
               </Link>
             </div>

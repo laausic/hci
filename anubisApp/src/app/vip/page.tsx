@@ -50,7 +50,7 @@ export default function SignUp() {
     <div className="py-12 px-8 sm:px-10 bg-white/80 rounded-lg shadow-lg max-w-md">      
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold font-poppins text-gray-900">
-            Start Your Engine – <br/>Create Your Account 
+            Start Your Engine <br/>Create Your Account 
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={signUp}>

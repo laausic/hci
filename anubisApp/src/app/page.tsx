@@ -67,7 +67,7 @@ export default function Home() {
       <p className="text-xl font-thin text-white font-poppins mb-4 ml-4 max-w-lg max-sm:truncate max-sm:overflow-hidden">
       Integrate advanced technology features that enhance safety and usability.
       </p>
-      <button className="text-sm font-semibold text-black flex self-end mr-8 mb-4 whitespace-nowrap">DISCOVER MORE &gt;&gt;</button>
+      <button className="text-sm font-semibold text-black flex self-end mr-8 mb-4 whitespace-nowrap hover:text-gray-600">DISCOVER MORE &gt;&gt;</button>
     </div>
   </div>
 
@@ -93,7 +93,7 @@ export default function Home() {
 
     <div className="h-2/5 flex items-center justify-start bg-[#519078] rounded-b-lg">
       <p className="text-xl font-thin text-white font-poppins mb-4 ml-4 max-w-lg max-sm:truncate max-sm:overflow-hidden">Choose from premium materials: bespoke leather, suede, and exclusive fabrics.</p>
-      <button className="text-sm font-semibold text-black flex self-end mr-8 mb-4 whitespace-nowrap">DISCOVER MORE &gt;&gt;</button>
+      <button className="text-sm font-semibold text-black flex self-end mr-8 mb-4 whitespace-nowrap hover:text-gray-600">DISCOVER MORE &gt;&gt;</button>
     </div>
   </div>
 
@@ -117,7 +117,7 @@ export default function Home() {
 
     <div className="h-2/5 flex items-center justify-start bg-[#519078] rounded-b-lg">
       <p className="text-xl font-thin text-white font-poppins mb-4 ml-4 max-w-lg max-sm:truncate max-sm:overflow-hidden">Curate your Anubis’s exterior with bespoke design that elevates exclusivity.</p>
-      <button className="text-sm font-semibold text-black flex self-end mr-8 mb-4 whitespace-nowrap">DISCOVER MORE &gt;&gt;</button>
+      <button className="text-sm font-semibold text-black flex self-end mr-8 mb-4 whitespace-nowrap hover:text-gray-600">DISCOVER MORE &gt;&gt;</button>
     </div>
   </div>
 
@@ -140,7 +140,7 @@ export default function Home() {
 
     <div className="h-2/5 flex items-center justify-start bg-[#519078] rounded-b-lg">
       <p className="text-xl font-thin text-white font-poppins mb-4 ml-4 max-w-lg max-sm:truncate max-sm:overflow-hidden">Bring your brand’s identity to life with stunning visuals of your vehicle.</p>
-      <button className="text-sm font-semibold text-black flex self-end mr-8 mb-4 whitespace-nowrap">DISCOVER MORE &gt;&gt;</button>
+      <button className="text-sm font-semibold text-black flex self-end mr-8 mb-4 whitespace-nowrap hover:text-gray-600">DISCOVER MORE &gt;&gt;</button>
     </div>
   </div>
 
