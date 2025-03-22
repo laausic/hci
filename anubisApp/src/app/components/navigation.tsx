@@ -10,7 +10,8 @@ import {
 import "@fontsource/michroma";
 import "@fontsource/poppins";
 import { supabase } from "@/lib/auth-client";
-import NotFound from "../not-found";
+import { LogOut } from "lucide-react"; // Import the logout icon
+
 
 type Page = {
   title: string;
@@ -132,7 +133,9 @@ export function Navigation() {
           <li key="private" className="py-2">
             <Link
               href="/vip/private"
-              className="block hover:text-[#519078]"
+              className= {`block ${
+                pathname === "/vip/private" ? "font-extrabold text-[#519078]" : ""
+              }`}
               onClick={() => setMenuOpen(false)}
             >
               Ambassador
@@ -152,9 +155,9 @@ export function Navigation() {
               <Link
                 href="../"
                 onClick={handleSignOut}
-                className="block text-red-600 hover:text-red-800"
+                className="block"
               >
-                SO
+              <LogOut className="w-5 h-5" /> {/* Icon here */}
               </Link>
             </li>
           )

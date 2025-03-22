@@ -17,13 +17,13 @@ export default function Footer(){
         <div className="flex flex-wrap justify-between items-start">
 
           <div className="sm:w-1/4 mb-6 sm:mb-0 flex flex-col max-sm:flex max-sm:flex-row items-center justify-center text-center">
-            <img src={'/img/logo.png'} alt="Logo" className="w-20" />
-            <p className="font-michroma mt-5 text-black sm:hidden">A N U B I S</p>
+            <img src={'/img/logo.png'} alt="Logo" className="w-10"/>
+            <p className="font-michroma ml-4 text-center text-black sm:hidden">A N U B I S</p>
             <p className="text-center mt-2 text-xl text-gray-500 max-sm:hidden">"Chase The Waves"</p>
           </div>
 
         {/* Quick Links */}
-        <div className="w-full sm:w-1/4 mb-6 sm:mb-0">
+        <div className="w-full sm:w-1/4 mt-6 mb-6 sm:mb-0 max-sm:text-sm">
         <h3 className="text-xl font-semibold mb-4 cursor-pointer sm:cursor-default"
             onClick={() => toggleQuickLinksMenu()}>Quick Links
         <span className="sm:hidden ml-2">{isQuickLinksOpen ? "▲" : "▼"}</span>

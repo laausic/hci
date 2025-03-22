@@ -10,7 +10,7 @@ export default function ContactPage() {
     <div className="flex flex-col md:flex-row justify-between items-start p-5 max-w-6xl mx-auto">
             <div className="flex-1 mr-5 flex flex-col">
                 <h1 className="text-5xl font-thin mb-6 mt-5">CONTACT</h1>
-                <div className="w-32 h-1.5 bg-[#519078] mb-16"></div>
+                <div className="w-32 h-1.5 bg-[#519078] mb-8"></div>
                 <p className="text-2xl max-w-sm mb-10">
                 Have questions or need assistance?
                 Fill out the form, and our team will get back to you shortly.</p>

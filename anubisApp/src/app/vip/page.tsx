@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import { EyeOff, Eye } from "lucide-react";
 
 
 export default function SignUp() {
@@ -10,6 +11,8 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
 
   const router = useRouter();
 
@@ -86,21 +89,28 @@ export default function SignUp() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div>
+            <div className="relative">
               <label htmlFor="password" className="sr-only">
                 Password
               </label>
               <input
                 id="password"
                 name="password"
-                type="password"
+                type={showPassword ? 'text' : 'password'} 
                 autoComplete="current-password"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 pr-12 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none  sm:text-sm"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-0 px-3 py-2 flex items-center"
+              >
+                {showPassword ? <Eye className="w-5 h-5"/> : <EyeOff className="w-5 h-5"/>}
+              </button>
             </div>
           </div>
 
@@ -108,7 +118,7 @@ export default function SignUp() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#519078] hover:bg-[#608078] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative w-full flex justify-center py-2 px-4 pr-10 border border-transparent text-sm font-medium rounded-md text-white bg-[#519078] hover:bg-[#608078] focus:outline-none focus:ring-2 focus:ring-offset-2"
             >
               {loading ? (
                 <svg
@@ -140,7 +150,7 @@ export default function SignUp() {
 
         <p className="mt-4 text-center text-sm text-gray-600">
         Already have an account?{" "}
-        <a href="/vip/signin" className="font-medium text-[#519078] hover:text-[#608078]">
+        <a href="/vip/signin" className="font-medium text-[#519078] hover:text-[#2b503d]">
           Sign in
         </a>
       </p>
