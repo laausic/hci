@@ -42,9 +42,9 @@ export default function Home() {
     <div className="w-full md:w-1/2 flex flex-col items-center justify-center md:p-8">
       <p className="text-lg md:text-2xl font-poppins font-light max-w-lg text-left md:text-left">
         Engineered to conquer the waves, the Anubis Jet Car combines revolutionary jet propulsion with a sleek, aerodynamic design.
-        Designed for unmatched performance and modern elegance, it sets a new standard of excellence on water.
+        Designed for unmatched performance and elegance, it sets a new standard of excellence on water.
       </p>
-      <button className="text-white bg-black hover:bg-[#686d6b] rounded-lg px-8 py-4 text-lg m-3 max-sm:hidden">
+      <button className="text-white bg-black hover:bg-[#686d6b] rounded-lg px-8 py-4 text-lg mt-6 max-sm:hidden">
         Learn More
       </button>
       <button className="text-sm font-thin text-[#519078] flex self-end mt-5 sm:hidden">
@@ -74,7 +74,7 @@ export default function Home() {
 
     {/*Adjust for mobile phone*/}
     <div className="w-full sm:hidden flex flex-col items-start justify-center">
-      <img src="/img/home-cutting-edge.jpg" alt="Image" className="w-full rounded-lg h-2/3" />
+      <img src="/img/home-cutting-edge.jpg" alt="Image" className="w-full rounded-lg" />
       <h2 className="text-xl font-extralight tracking-tight font-michroma mt-3">CUTTING - EDGE</h2>
       <div className="w-32 h-1 bg-[#519078] mt-3"></div>
       <p className="text-lg font-thin text-left text-black font-poppins mt-4 max-w-lg sm:hidden">
@@ -160,7 +160,7 @@ export default function Home() {
     className="flex flex-col justify-center items-start p-4 bg-cover opacity-80 bg-center bg-no-repeat h-screen w-full max-sm:h-80"
     style={{backgroundImage: `url(/img/home-explore.jpg)`}}>
   
-  <div className="mt-20 flex flex-row rounded-lg justify-center items-center bg-gray-300 bg-opacity-40">
+  <div className="flex flex-row rounded-lg justify-center mb-28 items-center bg-gray-300 bg-opacity-40">
     <div className="border border-lightGray p-4 md:p-6 max-md:hidden rounded-lg flex flex-row items-center space-x-4">
       <p className="text-lg text-center font-poppins max-w-lg text-black">
         Experience unmatched performance and innovative technology, offering exceptional speed, precision, and safety on the water.
