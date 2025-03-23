@@ -1,50 +1,57 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { createClient } from 'contentful';
+import Footer from '../components/footer';
 
-const fetchImages = async () => {
-  const response = await fetch('https://my-json-server.typicode.com/jsaric21/fetch-test/photos');
-  return response.json();
-};
-
-const GalleryPage = () => {
-  const [photos, setPhotos] = useState([]);
+export default function GalleryPage() {
   const [loading, setLoading] = useState(true);
+  const [images, setImages] = useState([]);
 
-  useEffect(() => {
-    const getPhotos = async () => {
-      const data = await fetchImages();
-      setPhotos(data);
+useEffect(() => {
+  async function fetchData() {
+    try {
+      const client = createClient({
+        space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+        accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
+      });
+
+      const res = await client.getEntries({ content_type: "anubisGallery" });
+      console.log(res.items);
+      setImages(res.items);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
       setLoading(false);
-    };
-    getPhotos();
-  }, []);
+    }
+  }
+
+  fetchData();
+}, []);
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-10">
-      <h1 className="text-6xl font-extrabold tracking-tight mb-10">Photo Gallery</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {photos.map((photo) => (
-          <div
-            key={photo.id}
-            className="relative bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer"
-          >
-            <Link href={`/gallery/${photo.id}`}>
-              <img
-                src={photo.thumbnailUrl}
-                alt={photo.title}
-                className="w-full h-48 object-cover rounded-t-lg"
-              />
-              <div className="p-4">
-                <p className="text-center text-gray-800 font-semibold truncate">{photo.title}</p>
-              </div>
-            </Link>
-          </div>
+    <div className='overflow-x-hidden'>
+    <main className="flex min-h-screen flex-col items-center p-5 md:p-10">
+      <h1 className="text-4xl md:text-5xl font-thin mb-4 mt-5 text-center">GALLERY</h1>
+      <div className="w-24 md:w-32 h-1.5 bg-[#519078] mb-6 md:mb-8"></div>
+  
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 w-full">
+        {images.map((item) => (
+          <Link key={item.sys.id} href={`/gallery/${item.fields.customId}`}>
+            <img
+              src={item.fields.thumbnail.fields.file.url}
+              alt={item.fields.title}
+              className="w-full h-full object-cover cursor-pointer transition-transform hover:scale-105"
+            />
+          </Link>
         ))}
+         
       </div>
     </main>
+    <Footer />
+  </div>
+  
   );
-};
-
-export default GalleryPage;
+}

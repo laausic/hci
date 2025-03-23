@@ -1,33 +1,64 @@
+import { createClient } from "contentful";
 import Link from "next/link";
+import { Download } from "lucide-react";
 
-const fetchImageById = async (id) => {
-  const response = await fetch(`https://my-json-server.typicode.com/jsaric21/fetch-test/photos/${id}`);
-  return response.json();
-};
+async function getData(customId) {
+  const client = createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
+  });
 
-export default async function PhotoPage({params}){
-  const post = await fetchImageById(params.id);
-  const { id, title, thumbnailUrl} = post;
+  const res = await client.getEntries({
+    content_type: "anubisGallery",
+    "fields.customId": customId, // Query by custom ID
+  });
 
+  return res.items.length > 0 ? res.items[0] : null;
+}
+
+// Pre-generate paths for each image
+export async function generateStaticParams() {
+  const client = createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ 
+    content_type: "anubisGallery" });
+
+  return res.items.map((item) => ({
+    id: item.fields.customId,
+  }));
+}
+
+export default async function ImagePage({ params }) {
+  const imageData = await getData(params.id);
+
+  if (!imageData) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-black text-white text-2xl">
+        <p>Image not found</p>
+      </div>
+    );
+  }
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-100 p-10">
-      <article className="w-full max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden p-8">
-        <Link
-          href="/gallery"
-          className="inline-flex items-center text-gray-500 hover:text-gray-800 transition-colors duration-200 mb-6 text-sm font-medium">
-          Back to gallery
-        </Link>
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-6 text-center">
-          {title}
-        </h1>
-        <img
-          src={thumbnailUrl}
-          alt="car photo"
-          className="w-full h-auto rounded-lg shadow-sm mb-6"
-        />
-      </article>
-    </main>
-  );
-  
-};
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+      {/* Centered Back Button */}
+      <Link href="/gallery">
+        <button className="mb-4 text-center px-4 py-2 text-lg">
+          &lt;&lt; BACK TO GALLERY
+        </button>
+      </Link>
+    
+      <div className="relative w-full max-w-4xl mt-4">
+      <img
+        src={imageData.fields.thumbnail.fields.file.url}
+        alt={imageData.fields.title}
+        className="w-full h-auto max-h-[85vh] sm:max-h-[90vh] object-contain rounded-lg"
+      />
 
+        <Download size={48} className="absolute bottom-2 right-2 p-2 transition text-white cursor-pointer" />
+    </div>
+</div>
+  );
+}

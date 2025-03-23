@@ -23,7 +23,7 @@ export default function Footer(){
           </div>
 
         {/* Quick Links */}
-        <div className="w-full sm:w-1/4 mt-6 mb-6 sm:mb-0 max-sm:text-sm">
+        <div className="w-full sm:w-1/4 mb-6 sm:mb-0 max-sm:text-sm">
         <h3 className="text-xl font-semibold mb-4 cursor-pointer sm:cursor-default"
             onClick={() => toggleQuickLinksMenu()}>Quick Links
         <span className="sm:hidden ml-2">{isQuickLinksOpen ? "▲" : "▼"}</span>
